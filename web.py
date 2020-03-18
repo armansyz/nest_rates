@@ -14,6 +14,8 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
+    """Password verification
+    """
     if username in users:
         return ws.check_password_hash(users.get(username), password)
     return False
@@ -22,6 +24,8 @@ def verify_password(username, password):
 @app.route('/nest', methods=['POST'])
 @auth.login_required
 def nest_process():
+    """REST service implementation
+    """
     json_data = flask.request.get_json(force=True)
     nkeys = flask.request.args.get('nkeys')
 

@@ -1,0 +1,5 @@
+.coverage
+output.json
+todo.txt
+/.idea/
+/venv/
